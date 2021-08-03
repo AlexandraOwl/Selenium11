@@ -42,8 +42,8 @@ public class orderCardTest {
     }
     @Test
     void shouldFillForm() {
-        driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Пылаева-Беженцева Лариса");
-        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79319503030");
+        driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Николайчук Александра");
+        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79880116795");
         driver.findElement(By.cssSelector(".checkbox__box")).click();
         driver.findElement(By.cssSelector("button")).click();
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
@@ -54,7 +54,7 @@ public class orderCardTest {
     @Test
     void shouldFillNameWrong() {
         driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Ghrtert");
-        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79319503030");
+        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79880116795");
         driver.findElement(By.cssSelector(".checkbox__box")).click();
         driver.findElement(By.cssSelector("button")).click();
         String expected = "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.";
@@ -64,7 +64,7 @@ public class orderCardTest {
 
     @Test
     void shouldNotFillName() {
-        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79319503030");
+        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79880116795");
         driver.findElement(By.cssSelector(".checkbox__box")).click();
         driver.findElement(By.cssSelector("button")).click();
         String expected = "Поле обязательно для заполнения";
@@ -73,8 +73,8 @@ public class orderCardTest {
     }
     @Test
     void shouldFillPhoneWrong() {
-        driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Пылаева Лариса");
-        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+7931950303");
+        driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Николайчук Александра");
+        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+7988011679");
         driver.findElement(By.cssSelector(".checkbox__box")).click();
         driver.findElement(By.cssSelector("button")).click();
         String expected = "Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.";
@@ -84,8 +84,8 @@ public class orderCardTest {
     }
     @Test
     void shouldNotCheckBox() {
-        driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Пылаева Лариса");
-        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79319503030");
+        driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Николайчук Александра");
+        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79880116795");
         driver.findElement(By.cssSelector("button")).click();
         String expected = "Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
         String actual = driver.findElement(By.cssSelector("[role='presentation']")).getText().trim();
